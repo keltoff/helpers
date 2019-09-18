@@ -15,6 +15,6 @@ class Period:
         else:
             self.last = t
             if self.text:
-                print t.strftime('\r' + self.text)
+                print(t.strftime('\r' + self.text))
 
             return True

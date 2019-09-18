@@ -50,7 +50,8 @@ class AngleBase(float):
         raise NotImplementedError()
 
     @staticmethod
-    def normalize_to(value, (min, max), step):
+    def normalize_to(value, minmax, step):
+        min, max = minmax
         while value > max:
             value -= step
         while value < min:

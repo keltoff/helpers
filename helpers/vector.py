@@ -1,5 +1,5 @@
 import math
-from angles import AngleBase, AngleDiff
+from .angles import AngleBase, AngleDiff
 
 
 class Vector(tuple):

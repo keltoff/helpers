@@ -1,5 +1,5 @@
 from __future__ import print_function
-from eta_timer import EtaTimer
+from .eta_timer import EtaTimer
 
 
 def reported_queue(x, label):
