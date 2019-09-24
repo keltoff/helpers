@@ -1,4 +1,17 @@
 
+def range2(A, B, index=False):
+    if issubclass(type(A), int):
+        A = range(A)
+    if issubclass(type(B), int):
+        B = range(B)
+
+    for ia, a in enumerate(A):
+        for ib, b in enumerate(B):
+            if index:
+                yield ia, a, ib, b
+            else:
+                yield a, b
+
 
 def pairs(values):
     iterator = values.__iter__()
@@ -6,6 +19,16 @@ def pairs(values):
     for i in iterator:
         yield last, i
         last = i
+
+
+def triples(A):
+    it = A.__iter__()
+    first = it.next()
+    second = it.next()
+    for a in it:
+        yield first, second, a
+        first = second
+        second = a
 
 
 def flatten(*args):
