@@ -15,7 +15,7 @@ def range2(A, B, index=False):
 
 def pairs(values):
     iterator = values.__iter__()
-    last = iterator.next()
+    last = next(iterator)
     for i in iterator:
         yield last, i
         last = i
@@ -23,8 +23,8 @@ def pairs(values):
 
 def triples(A):
     it = A.__iter__()
-    first = it.next()
-    second = it.next()
+    first = next(it)
+    second = next(it)
     for a in it:
         yield first, second, a
         first = second
@@ -47,7 +47,7 @@ def flatten(*args):
 
 def all_combinations(*iterables):
     params = list(iterables)
-    outer_param = params.pop()
+    outer_param = params.pop(0)
 
     for val in outer_param:
         if len(params) > 0:
