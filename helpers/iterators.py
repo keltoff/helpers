@@ -14,21 +14,23 @@ def range2(A, B, index=False):
 
 
 def pairs(values):
-    iterator = values.__iter__()
-    last = next(iterator)
-    for i in iterator:
-        yield last, i
-        last = i
+    if values:
+        iterator = values.__iter__()
+        last = next(iterator)
+        for i in iterator:
+            yield last, i
+            last = i
 
 
 def triples(A):
-    it = A.__iter__()
-    first = next(it)
-    second = next(it)
-    for a in it:
-        yield first, second, a
-        first = second
-        second = a
+    if A:
+        it = A.__iter__()
+        first = next(it)
+        second = next(it)
+        for a in it:
+            yield first, second, a
+            first = second
+            second = a
 
 
 def flatten(*args):
